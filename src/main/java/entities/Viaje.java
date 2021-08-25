@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Entity
+@Table
 public class Viaje {
     @ManyToMany(mappedBy = "viaje", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Persona> cuidadores;

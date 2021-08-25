@@ -2,6 +2,8 @@ package entities;
 
 import javax.persistence.*;
 
+@Entity
+@Table
 public class Partido {
     @Id
     @GeneratedValue
