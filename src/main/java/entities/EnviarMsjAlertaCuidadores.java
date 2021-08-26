@@ -1,11 +1,7 @@
 package entities;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
 import java.util.List;
 
-@Entity
-@DiscriminatorValue("msj")
 public class EnviarMsjAlertaCuidadores extends ReaccionIncidente {
 
     @Override

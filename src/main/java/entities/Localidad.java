@@ -11,7 +11,12 @@ public class Localidad {
     @Column
     private String nombre;
     @ManyToOne
+    @JoinColumn(name="partido_id", referencedColumnName = "id")
     private Partido partido;
+
+    public Localidad(){
+        //Para que no se queje Hibernate
+    }
 
     public String getNombre() {
         return nombre;

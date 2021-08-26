@@ -10,11 +10,15 @@ public class Direccion {
     private int id;
     @Column
     private String calle;
-    @ManyToOne
+    @ManyToOne //este si tiene sentido. desplegable.
     @JoinColumn(name="localidad_id", referencedColumnName = "id")
     private Localidad localidad;
     @Column
     private Integer nro;
+
+    public Direccion(){
+        //Para que no se queje Hibernate
+    }
 
     public Direccion(String calle, Integer nro){
         this.calle = calle;

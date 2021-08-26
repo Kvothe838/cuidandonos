@@ -13,7 +13,7 @@ public class Viaje {
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Persona> cuidadores;
     @ManyToOne
-    private Direccion destino;
+    private Direccion destino; //one to one
     @Column
     private Integer duracionEstimadaMin;
     @Column(columnDefinition = "DATE")
@@ -24,6 +24,8 @@ public class Viaje {
     private Direccion origen;
     @ManyToOne
     private Persona transeunte;
+
+    //Constructor vacío siempre.
 
     public Viaje(Direccion origen, Direccion destino, List<Persona> cuidadores, Persona transeunte){
         this.origen = origen;

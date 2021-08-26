@@ -11,6 +11,10 @@ public class Provincia {
     @Column
     private String nombre;
 
+    public Provincia(){
+        //Para que no se queje Hibernate
+    }
+
     public String getNombre() {
         return nombre;
     }
