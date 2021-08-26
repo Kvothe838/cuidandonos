@@ -11,7 +11,6 @@ public class Partido {
     @Column
     private String nombre;
     @ManyToOne
-    @JoinColumn(name="provincia_id", referencedColumnName = "id")
     private Provincia provincia;
 
     public String getNombre() {

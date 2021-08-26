@@ -1,12 +1,13 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Usuario {
+    @Id
+    @GeneratedValue
+    private int id;
     @Column
     private String contrasenia;
     @Column

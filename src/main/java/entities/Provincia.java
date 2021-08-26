@@ -1,9 +1,9 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table
 public class Provincia {
     @Id
     @GeneratedValue

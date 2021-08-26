@@ -16,7 +16,16 @@ public class Direccion {
     @Column
     private Integer nro;
 
+    public Direccion(String calle, Integer nro){
+        this.calle = calle;
+        this.nro = nro;
+    }
+
     public String direccionCompleta(){
         return this.calle + " " + this.nro + ", " + this.localidad.getNombre();
+    }
+
+    public void setLocalidad(Localidad localidad) {
+        this.localidad = localidad;
     }
 }

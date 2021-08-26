@@ -5,8 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table
 public class CalculadorDeTiempo {
+    @Id
+    @GeneratedValue
+    private int id;
     @ManyToOne
-    @JoinColumn(name="adapter_id", referencedColumnName = "id")
     private AdapterCalculadorDistancia adapter;
     @Column
     private Integer tiempoEnMinsPorMetro;

@@ -7,10 +7,12 @@ import java.util.List;
 @Entity
 @Table
 public class Viaje {
-    @ManyToMany(mappedBy = "viaje", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @Id
+    @GeneratedValue
+    private int id;
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private List<Persona> cuidadores;
     @ManyToOne
-    @JoinColumn(name="direccion_id", referencedColumnName = "id")
     private Direccion destino;
     @Column
     private Integer duracionEstimadaMin;
@@ -19,11 +21,17 @@ public class Viaje {
     @Column
     private Boolean finalizado;
     @ManyToOne
-    @JoinColumn(name="direccion_id", referencedColumnName = "id")
     private Direccion origen;
     @ManyToOne
-    @JoinColumn(name="persona_id", referencedColumnName = "id")
     private Persona transeunte;
+
+    public Viaje(Direccion origen, Direccion destino, List<Persona> cuidadores, Persona transeunte){
+        this.origen = origen;
+        this.destino = destino;
+        this.cuidadores = cuidadores;
+        this.transeunte = transeunte;
+        this.finalizado = false;
+    }
 
     public List<Persona> getCuidadores() {
         return cuidadores;
@@ -31,5 +39,9 @@ public class Viaje {
 
     public Persona getTranseunte() {
         return transeunte;
+    }
+
+    public void setFechaHoraInicio(LocalDateTime fechaHoraInicio) {
+        this.fechaHoraInicio = fechaHoraInicio;
     }
 }
